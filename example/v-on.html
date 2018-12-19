@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on实例</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>v-on</h1>
+<hr>
+<div id="app">
+    本场比赛得分:{{ grade }}
+    <p>
+        <button v-on:click="addTest">加分</button>
+        <button @click="decTest">减分</button><br/>
+        <input type="text" v-on:keyup.enter="onEnter" v-model="grade2">
+    </p>
+</div>
+<script type="text/javascript">
+    var app = new Vue({
+        el:'#app',
+        data:{
+            grade:0,
+            grade2:1
+        },
+        methods:{
+            addTest:function(){
+              this.grade++;
+            },
+            decTest:function(){
+                this.grade--;
+            },
+            onEnter:function(){
+                this.grade = this.grade + parseInt(this.grade2);
+            }
+        }
+    })
+</script>
+</body>
+</html>
