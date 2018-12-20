@@ -10,5 +10,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "lj",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/encounter1105/vuestudy.git"
+  },
+  "keywords": [
+    "vuestudy"
+  ],
+  "bugs": {
+    "url": "https://github.com/encounter1105/vuestudy/issues"
+  },
+  "homepage": "https://github.com/encounter1105/vuestudy#readme"
 }
