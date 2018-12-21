@@ -8,9 +8,21 @@
 <body>
     <h1>vue.extend 扩展实例构造器</h1>
     <hr>
-    <author></author>
-<script type="text/javascript">
+    <!--<author></author>-->
+    <div id="author"></div>
+    <script type="text/javascript">
+    var authorExtend = Vue.extend({
+        template:"<p><a :href='authorURL'>{{ authorName }}</a></p>",
+        data:function(){
+            return{
+                authorName:'JSPang',
+                authorURL:"http://www.jspang.com"
+            }
+        }
+    });
 
-</script>
+    // new authorExtend().$mount('author');
+    new authorExtend().$mount('#author');
+    </script>
 </body>
 </html>
