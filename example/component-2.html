@@ -2,20 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HelloWorld</title>
+    <title>component-2</title>
     <script type="text/javascript" src="../assets/js/vue.js"></script>
 </head>
 <body>
-<h1>HelloWorld</h1>
+<h1>component-2</h1>
 <hr>
 <div id="app">
-    {{ message }}
+    <panda :here="message"></panda>
 </div>
 <script type="text/javascript">
     var app = new Vue({
         el:'#app',
         data:{
-            message:'hello world22222!'
+            message:'sichuan'
+        },
+        components:{
+            "panda":{
+                template:`<div style="color:green">Panda from {{ here }}</div>`,
+                props:['here']
+            }
         }
     })
 </script>
