@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computed Option</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>computed Option</h1>
+<hr>
+<div id="app">
+    <p>{{ newPrice }}</p>
+    <ul>
+        <li v-for="item in reversNews">{{item.title}}-{{item.date}}</li>
+    </ul>
+</div>
+<script type="text/javascript">
+    var newsList = [
+        {title:'韩国瑜就职日郭台铭采购500万农产品 欲评估投资高雄',date:'2018/12/22'},
+        {title:'乘高铁迟到 为发泄男子将包扔入铁轨被列黑名单',date:'2018/12/23'},
+        {title:'反中”报道不管 香港记协却对港媒“反台独”零容忍',date:'2018/12/24'},
+        {title:'天津“无人驾驶”车上路了！剐蹭了赖谁？',date:'2018/12/25'},
+    ]
+    var app = new Vue({
+        el:'#app',
+        data:{
+            price:100,
+            newsList:newsList
+        },
+        computed:{
+            newPrice:function(){
+                return this.price = '￥'+ this.price + '元'
+            },
+            reversNews:function(){
+                return this.newsList.reverse();
+            }
+        }
+    })
+</script>
+</body>
+</html>
