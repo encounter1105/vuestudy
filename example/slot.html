@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内置组件 -slot</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>内置组件 -slot</h1>
+<hr>
+<div id="app">
+    <jspang>
+        <span slot="blogUrl">{{jspangData.blogUrl}}</span>
+        <span slot="netName">{{jspangData.netName}}</span>
+        <span slot="skill">{{jspangData.skill}}</span>
+    </jspang>
+</div>
+<template id="tep">
+    <div>
+        <p>博客地址：<slot name="blogUrl"></slot></p>
+        <p>网名：<slot name="netName"></slot></p>
+        <p>技术类型：<slot name="skill"></slot></p>
+    </div>
+</template>
+<script type="text/javascript">
+    var jspang ={
+        template:"#tep"
+    }
+    var app = new Vue({
+        el:'#app',
+        data:{
+            jspangData:{
+                blogUrl:'http://jspang.com',
+                netName:'技术胖',
+                skill:'web前端'
+            }
+        },
+        components:{
+            "jspang":jspang
+        }
+    })
+</script>
+</body>
+</html>
