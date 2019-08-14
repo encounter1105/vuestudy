@@ -26,33 +26,63 @@
         },
         beforeCreate:function(){
             console.log('1-beforeCreate 初始化之前');
+            console.log("%c%s", "color:red" , "el: " + this.$el);
+            console.log("%c%s", "color:red","data: " + this.$data);
+            console.log("%c%s", "color:red","message: " + this.count);
         },
         created:function(){
             console.log('2-created 创建完成');
+            console.log("%c%s", "color:red" , "el: " + this.$el);
+            console.log("%c%s", "color:red","data: " + this.$data);
+            console.log("%c%s", "color:red","message: " + this.count);
         },
         beforeMount:function(){
             console.log('3-beforeMount 挂载之前');
+            console.log("%c%s", "color:red" , "el: " + this.$el);
+            console.log("%c%s", "color:red","data: " + this.$data);
+            console.log("%c%s", "color:red","message: " + this.count);
         },
         mounted:function(){
             console.log('4-mounted 被挂载之后');
+            console.log("%c%s", "color:red" , "el: " + this.$el);
+            console.log("%c%s", "color:red","data: " + this.$data);
+            console.log("%c%s", "color:red","message: " + this.count);
         },
         beforeUpdate:function(){
             console.log('5-beforeUpdate 数据更新前');
+            console.log("%c%s", "color:red" , "el: " + this.$el);
+            console.log("%c%s", "color:red","data: " + this.$data);
+            console.log("%c%s", "color:red","message: " + this.count);
         },
         updated:function(){
             console.log('6-updated 被更新后');
+            console.log("%c%s", "color:red" , "el: " + this.$el);
+            console.log("%c%s", "color:red","data: " + this.$data);
+            console.log("%c%s", "color:red","message: " + this.count);
         },
         activated:function(){
             console.log('7-activated');
+            console.log("%c%s", "color:red" , "el: " + this.$el);
+            console.log("%c%s", "color:red","data: " + this.$data);
+            console.log("%c%s", "color:red","message: " + this.count);
         },
         deactivated:function(){
             console.log('8-deactivated');
+            console.log("%c%s", "color:red" , "el: " + this.$el);
+            console.log("%c%s", "color:red","data: " + this.$data);
+            console.log("%c%s", "color:red","message: " + this.count);
         },
         beforeDestroy:function(){
             console.log('9-beforeDestroy 销毁之前');
+            console.log("%c%s", "color:red" , "el: " + this.$el);
+            console.log("%c%s", "color:red","data: " + this.$data);
+            console.log("%c%s", "color:red","message: " + this.count);
         },
         destroyed:function(){
-            console.log('10-destroyed 销毁之后')
+            console.log('10-destroyed 销毁之后');
+            console.log("%c%s", "color:red" , "el: " + this.$el);
+            console.log("%c%s", "color:red","data: " + this.$data);
+            console.log("%c%s", "color:red","message: " + this.count);
         }
 
     })
