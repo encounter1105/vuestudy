@@ -9,10 +9,12 @@
 <h1>component-4</h1>
 <hr>
 <div id="app">
-    <component v-bind:is="who"></component>
+    <!--3.在html里插入component标签，并绑定who数据，根据who的值不同，调用不同的组件。-->
+    <component :is="who"></component>
     <button @click="changeComponent">changeComponent</button>
 </div>
 <script type="text/javascript">
+    // 1.在构造器外部定义三个不同的组件，分别是componentA,componentB和componentC.
     var componentA = {
         template:`<div style="color:red">I'm componentA.</div>`
     }
@@ -22,6 +24,7 @@
     var componentC = {
         template:`<div style="color:pink">I'm componentC.</div>`
     }
+    // 2.在构造器的components选项里加入这三个组件
     var app = new Vue({
         el:'#app',
         data:{
@@ -34,9 +37,9 @@
         },
         methods:{
             changeComponent:function(){
-                if(this.who == "componentA"){
+                if(this.who === "componentA"){
                     this.who = "componentB";
-                }else if(this.who == "componentB"){
+                }else if(this.who === "componentB"){
                     this.who = "componentC";
                 }else{
                     this.who = "componentA";

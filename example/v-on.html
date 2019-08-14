@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>v-on实例</title>
@@ -31,6 +31,7 @@
                 this.grade--;
             },
             onEnter:function(){
+                //因为文本框的数字会默认转变成字符串，所以我们需要用parseInt()函数进行整数转换。
                 this.grade = this.grade + parseInt(this.grade2);
             }
         }

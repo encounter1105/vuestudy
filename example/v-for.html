@@ -35,6 +35,7 @@
             ]
         },
         computed:{
+            // 在computed里新声明了一个对象sortItems ,保护源数据源
             sortItems:function(){
                return this.items.sort(sortNumber);
             },

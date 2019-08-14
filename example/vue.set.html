@@ -14,12 +14,16 @@
             <li v-for="item in arr">{{ item }}</li>
         </ul>
     </div>
-    <p><button onclick="add()">ADD</button></p>
+    <p><button onclick="add()">外部添加</button></p>
     <script type="text/javascript">
         function add(){
+            // 1.Vue.set改变
             // Vue.set(outData,'count',2);
+            // 2.用vue对象的方法添加
             // app.count++;
-            // outData.count++;
+            // 3.直接操作外部数据
+            // console.log("我已经执行了")
+            outData.count++;
             // app.arr[1]='ddd';
             Vue.set(app.arr,1,'dd')
 

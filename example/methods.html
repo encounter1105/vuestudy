@@ -10,11 +10,16 @@
 <hr>
 <div id="app">
     {{ a }}
+    <!--2.调用方法时直接传递-->
     <p><button @click="add(2)">ADD</button></p>
+    <p></p><button @click="add(2,$event)">组件add</button></div></body></p>
+    <!--3.用.native修饰器来调用构造器里的add方法-->
     <p><btn @click.native="add(2)"></btn></p>
 </div>
+<!--作用域外部调用构造器里的方法-->
 <button onclick="app.add(3)">外部ADD</button>
 <script type="text/javascript">
+    <!--将add按钮封装成组件,1.声明btn对象-->
     var btn = {
         template:`<button>组件ADD</button>`
     }
@@ -23,13 +28,17 @@
         data:{
             a:1
         },
+        // 2.在构造器中声明
         components:{
             "btn":btn
         },
         methods:{
-            add:function(num){
+            // methods 方法参数传递分两步 ，1.在methods的方法中进行声明
+            add:function(num,$event){
+                console.log(event);
                 if(num!=''){
                     this.a+=num;
+                    console.log()
                 }else{
                     this.a ++;
                 }

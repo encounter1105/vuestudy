@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>v-bind实例</title>
@@ -9,8 +9,9 @@
 <h1>v-bind实例</h1>
 <hr>
 <div id="app">
+    <!--用v-bind:src=”imgSrc”的动态绑定了src的值-->
     <p><img v-bind:src="imgSrc" width="200"/></p>
-    <p><a :href="webUrl" target="_blank">技术胖</a></p>
+    <p><a :href="webUrl" target="_blank">太极开发者社区</a></p>
     <hr>
     <div :class="className">1.绑定class</div>
     <div :class="{classA:isOk}">2.绑定class中的判断</div>
@@ -30,15 +31,17 @@
         color:red;
     }
     .classB{
-        font-size:150%;
+        /*font-size:150%;*/
+        color:green;
     }
 </style>
 <script type="text/javascript">
     var app = new Vue({
         el:'#app',
+        //绑定CSS样式时，绑定的值必须在vue中的data属性中进行声明
         data:{
-            imgSrc:'http://jspang.com/static//myimg/blogtouxiang.jpg',
-            webUrl:'http://jspang.com',
+            imgSrc:'http://tech.taiji.com.cn/img/logo.9d4f3263.jpg',
+            webUrl:'http://tech.taiji.com.cn/',
             className:'classA',
             isOk:true,
             classA:'classA',

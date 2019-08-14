@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MixinsOption</title>
+    <title>extendsOption</title>
     <script type="text/javascript" src="../assets/js/vue.js"></script>
 </head>
 <body>
-<h1>MixinsOption</h1>
+<h1>extendsOption</h1>
 <hr>
 <div id="app">
     ${ num }
@@ -38,7 +38,10 @@
         updated:function(){
             console.log('我是原生的updated');
         },
+        // 注意extends与Mixins的区别 混入这块是数组，扩展只能是对象，即只能有一个扩展
         extends:extendsObj,
+        // delimiters的作用是改变我们插值的符号。Vue默认的插值是双大括号{{}}。但有时我们会有需求更改这个插值的形式。
+        // 现在我们的插值形式就变成了${}
         delimiters:['${','}']
     })
 </script>

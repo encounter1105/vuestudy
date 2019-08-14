@@ -13,11 +13,13 @@
     <p><button @click="add">ADD</button></p>
 </div>
 <script type="text/javascript">
+    // 额外临时加入时，用于显示日志 在外部申明一个对象
     var addLog={
         updated:function(){
             console.log('数据发生变化，变成了'+this.num)
         }
     };
+    // 全局API混入
     Vue.mixin({
         updated:function(){
             console.log('我是全局的混入');
@@ -33,10 +35,11 @@
                 this.num++;
             }
         },
+        // 构造器里面加入updated的钩子函数
         updated:function(){
             console.log('我是原生的updated');
         },
-        mixins:[addLog]
+        mixins:[addLog] //混入
     })
 </script>
 </body>

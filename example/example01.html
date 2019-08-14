@@ -5,6 +5,7 @@
     <title>example methods Demo</title>
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <!--1.下载并引入jquery框架-->
     <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
@@ -19,17 +20,20 @@
         data:{
             message:'hello world22222!'
         },
+        // 2.在DOM被挂载后修改里边的内容。
         mounted:function(){
             $("#app").html('我是Jquery!');
         },
+        // 3.实例调用自定义的方法
         methods:{
             add:function(){
                 console.log("调用了构造器内部的ADD方法")
             }
         }
     })
+    // 4.实例调用
     app.add();
-    console.log(app)
+    console.log(app);
 </script>
 </body>
 </html>

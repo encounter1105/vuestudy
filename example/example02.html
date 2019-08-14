@@ -13,13 +13,13 @@
 <p><button onclick="reload()">刷新</button></p>
 <p><button onclick="tick()">更改数据</button></p>
 <script type="text/javascript">
-    var jspang = Vue.extend({
-        template:`<p>{{message}}</p>`,
-        data:function(){
-            return{
-                message:'Hello,I am JSPang!'
-            }
-        },
+    var lj = Vue.extend({
+            template:`<p>{{message}}</p>`,
+            data:function(){
+                return{
+                    message:'Hello,I am lj!'
+                }
+            },
         mounted:function(){
             console.log("mounted 被创建");
         },
@@ -30,13 +30,17 @@
             console.log("update 更新之后")
         }
     })
-    var vm = new jspang().$mount("#app");
+    // 1.用$mount的方法把jspang挂载到DOM上
+    var vm = new lj().$mount("#app");
+    // 2.用$destroy()进行卸载
     function destroy(){
         vm.$destroy();
     }
+    // $forceUpdate() 更新
     function reload(){
         vm.$forceUpdate();
     }
+    // $nextTick() 数据修改方法
     function tick(){
         vm.message="update message info ";
         vm.$nextTick(function(){

@@ -11,9 +11,11 @@
     <div id="app">
         {{ message }}
     </div>
+    <!--2.写在template标签里的模板 这种写法更像是在写HTML代码，就算不会写Vue的人，也可以制作页面。-->
     <template id="tab">
         <h2 style="color:red">我是Template标签模板</h2>
     </template>
+    <!--3.写在script标签里的模板，这种写模板的方法，可以让模板文件从外部引入。-->
     <script type="x-template" id="tab1">
         <h2 style="color:red">我是Script标签模板</h2>
     </script>
@@ -23,10 +25,11 @@
          data:{
              message:'hello world22222!'
          },
-         template:"#tab1"
-         // template:`
-         //     <h2 style="color:red">我是选项模板</h2>
-         // `
+
+         // 1.直接写在选项里的模板
+         template:
+             `<h2 style="color:red">我是选项模板</h2>`,
+         template:"#tab",
         })
     </script>
 </body>

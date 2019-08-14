@@ -9,12 +9,15 @@
 <h1>component-3</h1>
 <hr>
 <div id="app">
+    <!--html中引用组件-->
     <panda></panda>
 </div>
 <script type="text/javascript">
+    // 1.父子组件的嵌套，先声明一个父组件叫panda，然后里边加入一个city组件
     var city = {
         template:`<div style="color:green;">siChuan of China</div>`
     }
+    // 构造器外部写局部注册组件
     var pandaComponent = {
         template:`
         <div>
@@ -26,6 +29,7 @@
             "city":city
         }
     }
+    // 声明好对象后在构造器里引用
     var app = new Vue({
         el:'#app',
         components:{

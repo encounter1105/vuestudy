@@ -27,21 +27,24 @@
             }
         }
     })
-
+    // $on 在构造器外部添加事件 $on接收两个参数，第一个参数是调用时的事件名称，第二个参数是一个匿名方法。
     app.$on("reduce",function(){
         console.log("执行了reduce方法");
         this.num --;
     });
+    // $once执行一次的事件
     app.$once('reduceOnce',function(){
         console.log('只执行一次的方法');
         this.num--;
     });
+    // 如果按钮在作用域外部，可以利用$emit来执行。外部调用内部事件
     function reduce(){
         app.$emit('reduce');
     }
     function reduceOnce(){
         app.$emit('reduceOnce')
     }
+    // $off关闭事件
     function off(){
         app.$off('reduce');
     }

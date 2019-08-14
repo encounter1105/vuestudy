@@ -8,21 +8,22 @@
 <body>
     <h1>vue.extend 扩展实例构造器</h1>
     <hr>
-    <!--<author></author>-->
-    <div id="author"></div>
+    <web></web>
+    <div id="web"></div>
     <script type="text/javascript">
-    var authorExtend = Vue.extend({
-        template:"<p><a :href='authorURL'>{{ authorName }}</a></p>",
+    var webExtend = Vue.extend({
+        template:"<p><a :href='webURL'>{{ webName }}</a></p>",
         data:function(){
             return{
-                authorName:'JSPang',
-                authorURL:"http://www.jspang.com"
+                webName:'太极开发者社区',
+                webURL:"http://tech.taiji.com.cn/"
             }
         }
     });
 
-    // new authorExtend().$mount('author');
-    new authorExtend().$mount('#author');
+    // new webExtend().$mount('web');
+    // 扩展实例构造器时需要挂载的
+    new webExtend().$mount('#web');
     </script>
 </body>
 </html>

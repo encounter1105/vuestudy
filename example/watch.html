@@ -29,6 +29,7 @@
                 this.wendu -= 5;
             }
         },
+        //在构造器内部进行数据监控
         // watch:{
         //     wendu:function(newVal,oldVal){
         //         if(newVal>=26){
@@ -41,6 +42,7 @@
         //     }
         // }
     })
+    // // watch在构造器外部，实例属性的形式写watch监控
     app.$watch('wendu',function(newVal,oldVal){
         if(newVal>=26){
             this.chuanyi=chuanyiArray[0];

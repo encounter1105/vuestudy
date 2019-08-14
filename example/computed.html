@@ -15,6 +15,7 @@
     </ul>
 </div>
 <script type="text/javascript">
+    // 用计算属性反转数组 1.没有排序的新闻列表
     var newsList = [
         {title:'韩国瑜就职日郭台铭采购500万农产品 欲评估投资高雄',date:'2018/12/22'},
         {title:'乘高铁迟到 为发泄男子将包扔入铁轨被列黑名单',date:'2018/12/23'},
@@ -27,10 +28,12 @@
             price:100,
             newsList:newsList
         },
+        // 1.格式化输出结果
         computed:{
             newPrice:function(){
                 return this.price = '￥'+ this.price + '元'
             },
+            // 用js原生方法给数组作了反转。
             reversNews:function(){
                 return this.newsList.reverse();
             }

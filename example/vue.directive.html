@@ -9,7 +9,7 @@
 <h1>Vue.directive</h1>
 <hr>
 <div id="app">
-    <div v-jspang="color">{{ num }}</div>
+    <div v-lj="color">{{ num }}</div>
     <p><button @click="add">ADD</button></p>
 </div>
 <p>
@@ -19,7 +19,8 @@
     function unbind(){
         app.$destroy();
     }
-    Vue.directive("jspang",{
+    // 自定义全局指令
+    Vue.directive("lj",{
         bind:function(el,binding){//被绑定
             console.log('1 - bind');
             el.style="color:"+binding.value
