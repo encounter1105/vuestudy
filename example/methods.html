@@ -5,16 +5,20 @@
     <title>methods Option</title>
     <script type="text/javascript" src="../assets/js/vue.js"></script>
 </head>
-<body>
+<>
 <h1>methods Option</h1>
 <hr>
 <div id="app">
     {{ a }}
     <!--2.调用方法时直接传递-->
-    <p><button @click="add(2)">ADD</button></p>
-    <p></p><button @click="add(2,$event)">组件add</button></div></body></p>
+    <p><button @click="add()">ADD</button></p>
+    <p><button @click="add(2,$event)">组件add</button></p>
     <!--3.用.native修饰器来调用构造器里的add方法-->
-    <p><btn @click.native="add(2)"></btn></p>
+    <p>
+        <btn @click.native="add(4)"></btn>
+        <btn @click.native="add(4)"></btn>
+        <btn @click.native="add(4)"></btn>
+    </p>
 </div>
 <!--作用域外部调用构造器里的方法-->
 <button onclick="app.add(3)">外部ADD</button>
@@ -35,12 +39,14 @@
         methods:{
             // methods 方法参数传递分两步 ，1.在methods的方法中进行声明
             add:function(num,$event){
+                // debugger
+                console.log("%%%%%%%%%%%%%")
                 console.log(event);
-                if(num!=''){
+                if(num!==undefined){
                     this.a+=num;
-                    console.log()
-                }else{
-                    this.a ++;
+                }
+                else{
+                    this.a++;
                 }
             }
         }
