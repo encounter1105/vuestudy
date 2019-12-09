@@ -11,7 +11,7 @@
 <div id="app">
     {{ a }}
     <!--2.调用方法时直接传递-->
-    <p><button @click="add()">ADD</button></p>
+    <p><button @click="add(4)">ADD</button></p>
     <p><button @click="add(2,$event)">组件add</button></p>
     <!--3.用.native修饰器来调用构造器里的add方法-->
     <p>
@@ -42,7 +42,7 @@
                 // debugger
                 console.log("%%%%%%%%%%%%%")
                 console.log(event);
-                if(num!==undefined){
+                if(num!=null){
                     this.a+=num;
                 }
                 else{

@@ -21,7 +21,7 @@
     }
     // 自定义全局指令
     Vue.directive("lj",{
-        bind:function(el,binding){//被绑定
+        bind:function(el,binding,vnode){//被绑定
             console.log('1 - bind');
             el.style="color:"+binding.value
         },

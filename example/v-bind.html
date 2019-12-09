@@ -11,7 +11,7 @@
 <div id="app">
     <!--用v-bind:src=”imgSrc”的动态绑定了src的值-->
     <p><img v-bind:src="imgSrc" width="200"/></p>
-    <p><a :href="webUrl" target="_blank">太极开发者社区</a></p>
+    <p><a :href="webUrl" target="_blank">百度网址</a></p>
     <hr>
     <div :class="className">1.绑定class</div>
     <div :class="{classA:isOk}">2.绑定class中的判断</div>
@@ -31,8 +31,8 @@
         color:red;
     }
     .classB{
-        /*font-size:150%;*/
-        color:green;
+        font-size:150%;
+        /*color:green;*/
     }
 </style>
 <script type="text/javascript">
@@ -40,10 +40,10 @@
         el:'#app',
         //绑定CSS样式时，绑定的值必须在vue中的data属性中进行声明
         data:{
-            imgSrc:'http://tech.taiji.com.cn/img/logo.9d4f3263.jpg',
-            webUrl:'http://tech.taiji.com.cn/',
+            imgSrc:'https://www.baidu.com/img/bd_logo1.png?where=super',
+            webUrl:'https://www.baidu.com/',
             className:'classA',
-            isOk:true,
+            isOk:false,
             classA:'classA',
             classB:'classB',
             red:'red',

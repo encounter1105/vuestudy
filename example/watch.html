@@ -30,28 +30,28 @@
             }
         },
         //在构造器内部进行数据监控
-        // watch:{
-        //     wendu:function(newVal,oldVal){
-        //         if(newVal>=26){
-        //             this.chuanyi=chuanyiArray[0];
-        //         }else if(newVal<26 && newVal>0){
-        //             this.chuanyi=chuanyiArray[1];
-        //         }else{
-        //             this.chuanyi=chuanyiArray[2];
-        //         }
-        //     }
-        // }
+        watch:{
+            wendu:function(newVal,oldVal){
+                if(newVal>=26){
+                    this.chuanyi=chuanyiArray[0];
+                }else if(newVal<26 && newVal>0){
+                    this.chuanyi=chuanyiArray[1];
+                }else{
+                    this.chuanyi=chuanyiArray[2];
+                }
+            }
+        }
     })
     // // watch在构造器外部，实例属性的形式写watch监控
-    app.$watch('wendu',function(newVal,oldVal){
-        if(newVal>=26){
-            this.chuanyi=chuanyiArray[0];
-        }else if(newVal<26 && newVal>0){
-            this.chuanyi=chuanyiArray[1];
-        }else{
-            this.chuanyi=chuanyiArray[2];
-        }
-    });
+    // app.$watch('wendu',function(newVal,oldVal){
+    //     if(newVal>=26){
+    //         this.chuanyi=chuanyiArray[0];
+    //     }else if(newVal<26 && newVal>0){
+    //         this.chuanyi=chuanyiArray[1];
+    //     }else{
+    //         this.chuanyi=chuanyiArray[2];
+    //     }
+    // });
 </script>
 </body>
 </html>

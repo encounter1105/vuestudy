@@ -8,7 +8,9 @@
 <body>
 <h1>example Methods Demo</h1>
 <hr>
-<div id="app"></div>
+<div id="app">
+
+</div>
 <p><button onclick="destroy()">卸载</button></p>
 <p><button onclick="reload()">刷新</button></p>
 <p><button onclick="tick()">更改数据</button></p>
@@ -30,7 +32,7 @@
             console.log("update 更新之后")
         }
     })
-    // 1.用$mount的方法把jspang挂载到DOM上
+    // 1.用$mount的方法把lj挂载到DOM上
     var vm = new lj().$mount("#app");
     // 2.用$destroy()进行卸载
     function destroy(){
