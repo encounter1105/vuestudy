@@ -8,8 +8,8 @@
 <body>
     <h1>vue.extend 扩展实例构造器</h1>
     <hr>
-    <!--<web></web>-->
-    <div id="web"></div>
+    <web></web>
+    <!--<div id="web"></div>-->
     <script type="text/javascript">
     var webExtend = Vue.extend({
         template:"<p><a :href='webURL'>{{ webName }}</a></p>",
@@ -21,9 +21,9 @@
         }
     });
 
-    // new webExtend().$mount('web');
+    new webExtend().$mount('web');
     // 扩展实例构造器时需要挂载的
-    new webExtend().$mount('#web');
+    // new webExtend().$mount('#web');
     </script>
 </body>
 </html>

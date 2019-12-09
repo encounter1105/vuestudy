@@ -13,17 +13,21 @@
         <ul>
             <li v-for="item in arr">{{ item }}</li>
         </ul>
+        <button @click="btn2Click()">改变数组长度 </button>
     </div>
     <p><button onclick="add()">外部添加</button></p>
+
     <script type="text/javascript">
         function add(){
             // 1.Vue.set改变d
             // Vue.set(outData,'count',2);
             // 2.用vue对象的方法添加
-            // app.count++;
+            app.count++;
             // 3.直接操作外部数据
-            // console.log("我已经执行了")
-            // outData.count++;
+            console.log("我已经执行了")
+            outData.count++;
+            this.arr[0]="ffff"
+            // outData.arr[1]='fff'
             // app.arr[1]='ddd';
             Vue.set(app.arr,1,'dd')
 
@@ -35,7 +39,16 @@
         }
         var app = new Vue({
             el:'#app',
-            data:outData
+            data:outData,
+            methods:{
+                btn2Click:function(){
+                    var arrLen = this.arr.length;
+                    console.log(arrLen);
+                    // this.arr.length = 5
+                    Vue.set(this.arr,arrLen,'ffff')
+                }
+            }
+
         })
     </script>
 </body>
