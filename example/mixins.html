@@ -13,6 +13,15 @@
     <p><button @click="add">ADD</button></p>
 </div>
 <script type="text/javascript">
+    <!--选项合并 当组件和混入对象含有同名选项时,这些选项将以恰当的方式进行"合并".-->
+    var mixin = {
+        data: function () {
+            return {
+                message: 'hello',
+                foo: 'abc'
+            }
+        }
+    }
     // 额外临时加入时，用于显示日志 在外部申明一个对象
     var addLog={
         updated:function(){
@@ -26,9 +35,16 @@
         }
     });
     var app = new Vue({
+        mixins:[addLog ,mixin], //混入
         el:'#app',
         data:{
-            num:1
+            num:1,
+            message: 'goodbye',
+            bar: 'def'
+        },
+        created: function () {
+            // 数据对象在内部会进行递归合并，并在发生冲突时以组件数据优先。
+            console.log(this.$data)
         },
         methods:{
             add:function(){
@@ -38,8 +54,7 @@
         // 构造器里面加入updated的钩子函数
         updated:function(){
             console.log('我是原生的updated');
-        },
-        mixins:[addLog] //混入
+        }
     })
 </script>
 </body>
