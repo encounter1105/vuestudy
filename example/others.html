@@ -10,7 +10,7 @@
 <hr>
 <div id="app">
    <div v-pre>{{ message }}</div>
-   <div v-cloak>渲染完成后，才显示</div>
+   <div v-cloak>渲染完成后，才显示 {{ message}}</div>
     <div v-once>{{message}}</div>
     <div><input type="text" v-model="message"></div>
     <div>{{message}}</div>

@@ -10,9 +10,9 @@
 <hr>
 <div id="app">
     <!--把构造器中data的值传递给组件，需要进行绑定就可以了-->
-    <!--<panda :here="message"></panda>-->
+    <panda :here="message"></panda>
     <!--<panda here="China"></panda>-->
-    <panda from-here="China"></panda>
+    <!--<panda from-here="China"></panda>-->
 </div>
 <script type="text/javascript">
     var app = new Vue({
@@ -23,9 +23,9 @@
         components:{
             //定义panda的组件，并用props设置了here的属性值
             "panda":{
-                template:`<div style="color:green">Panda from {{ fromHere }}</div>`,
-                // props:['here']
-                props:['fromHere']
+                template:`<div style="color:green">Panda from {{ here }}</div>`,
+                props:['here']
+                // props:['fromHere']
             }
         }
     })

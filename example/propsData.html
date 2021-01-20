@@ -19,10 +19,10 @@
                 message:'Hello,I am header'
             }
         },
-        // 2.传递时用propsData进行传递。props:[‘a’]
+        // 1.在全局扩展里加入props进行接收。props:[‘a’]
         props:['a']
     });
-    // 用propsData在挂载的时候传递一个值过去，需要三步 1..在全局扩展里加入props进行接收。propsData:{a:12}
+    // 用propsData在挂载的时候传递一个值过去，需要三步 2.传递时用propsData进行传递。propsData:{a:12}
     new header_a({propsData:{a:12}}).$mount('header');
 
 </script>

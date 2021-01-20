@@ -19,14 +19,14 @@
 
     <script type="text/javascript">
         function add(){
-            // 1.Vue.set改变d
+            // 1.Vue.set改变
             // Vue.set(outData,'count',2);
             // 2.用vue对象的方法添加
-            app.count++;
+            // app.count++;
             // 3.直接操作外部数据
-            console.log("我已经执行了")
+            // console.log("我已经执行了")
             outData.count++;
-            this.arr[0]="ffff"
+            // this.arr[0]="ffff"
             // outData.arr[1]='fff'
             // app.arr[1]='ddd';
             Vue.set(app.arr,1,'dd')

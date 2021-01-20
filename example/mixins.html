@@ -35,7 +35,7 @@
         }
     });
     var app = new Vue({
-        mixins:[addLog ,mixin], //混入
+        mixins:[addLog,mixin], //混入
         el:'#app',
         data:{
             num:1,
@@ -53,7 +53,7 @@
         },
         // 构造器里面加入updated的钩子函数
         updated:function(){
-            console.log('我是原生的updated');
+            console.log('我是构造器原生的updated');
         }
     })
 </script>
